@@ -1,7 +1,7 @@
 <template>
   <div class="empty">
     <div class="empty-icon">
-      <i class="icon icon-emoji"></i>
+      <i class="icon icon-emoji text-lg"></i>
     </div>
     <p class="empty-title h5">404</p>
     <p class="empty-subtitle">网页不存在</p>
