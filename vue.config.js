@@ -1,7 +1,7 @@
 const path = require('path');
 
 const resolve = dir => path.join(__dirname, dir);
-const baseURL = process.env.NODE_ENV === 'production' ? '/iframe' : '/';
+const baseURL = process.env.VUE_APP_BASE_API;
 
 module.exports = {
   publicPath: baseURL,
