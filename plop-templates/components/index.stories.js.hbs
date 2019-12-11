@@ -1,0 +1,12 @@
+/* eslint-disable */
+import { storiesOf } from '@storybook/vue';
+import { action } from '@storybook/addon-actions';
+import { linkTo } from '@storybook/addon-links';
+
+import {{properCase name}} from './{{properCase name}}.vue';
+
+storiesOf('{{properCase name}}', module)
+  .add('plain', () => ({
+    components: { {{properCase name}} },
+    template: '<{{properCase name}} ></{{properCase name}}>'
+  }))
