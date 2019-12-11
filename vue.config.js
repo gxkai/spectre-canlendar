@@ -23,6 +23,13 @@ module.exports = {
     port: 10000
   },
   pluginOptions: {
-    mock: { entry: './mock/index.js', debug: false, disable: false }
+    mock: {
+      entry: './mock/index.js',
+      debug: false,
+      disable: false
+    },
+    autoRouting: {
+      chunkNamePrefix: 'page-'
+    }
   }
 };
