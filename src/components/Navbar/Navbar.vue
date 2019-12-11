@@ -2,7 +2,7 @@
   <header class="navbar bg-theme p-2" :data-theme="$ls.get('theme') || 'light'">
     <section class="navbar-section">
       <span class="text-secondary text-bold">{{ diffTime }}</span>
-      <a href="https://github.com/gxkai" class="btn btn-link">GitHub</a>
+      <a href="https://github.com/gxkai/spectre-canlendar" class="btn btn-link">GitHub</a>
     </section>
     <section class="navbar-section">
       <div class="form-group">
