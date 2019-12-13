@@ -1,17 +1,18 @@
 <template>
-  <header class="navbar bg-theme p-2" :data-theme="$ls.get('theme') || 'light'">
+  <header class="navbar p-2">
     <section class="navbar-section">
       <span class="text-secondary text-bold">{{ diffTime }}</span>
     </section>
-    <section class="navbar-section">
-      <div class="form-group">
-        <label class="form-switch">
-          <input type="checkbox" v-model="isDark" />
-          <i class="form-icon"></i>
-          <span class="">{{ isDark ? '深色模式' : '浅色模式' }}</span>
-        </label>
-      </div>
-    </section>
+    <div class="form-group">
+      <select class="form-select" v-model="theme">
+        <option
+          :value="item.value"
+          v-for="(item, index) in themeList"
+          :key="index"
+          >{{ item.label }}</option
+        >
+      </select>
+    </div>
   </header>
 </template>
 
@@ -25,21 +26,44 @@ export default {
   provide: {},
   inject: [],
   props: [],
-  computed: {},
-  watch: {
-    isDark(n) {
-      this.$ls.set('theme', n === true ? 'dark' : 'light');
+  computed: {
+    theme: {
+      get() {
+        return this.$store.state.theme;
+      },
+      set(n) {
+        this.$store.state.theme = n;
+        this.$ls.set('theme', n);
+      }
     }
   },
+  watch: {},
   data() {
     return {
-      isDark: this.$ls.get('theme') === 'dark',
       timer: null,
-      diffTime: null
+      diffTime: null,
+      themeList: [
+        {
+          value: 'theme1',
+          label: '主题1'
+        },
+        {
+          value: 'theme2',
+          label: '主题2'
+        },
+        {
+          value: 'theme3',
+          label: '主题3'
+        }
+      ]
     };
   },
   beforeCreate() {},
   created() {
+    // window.document.documentElement.setAttribute(
+    //   'data-theme',
+    //   this.$ls.get('theme')
+    // );
     this.timer = setInterval(() => {
       this.diffTime = this.getDiffTime();
     }, 1000);

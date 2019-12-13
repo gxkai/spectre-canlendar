@@ -46,7 +46,7 @@ module.exports = {
     if (data.type.includes('views')) {
       actions.push({
         type: 'add',
-        path: `src/{{package}}/{{properCase name}}.vue`,
+        path: `src/{{package}}/{{name}}.vue`,
         templateFile: 'plop-templates/views/index.vue.hbs',
         data: {
           name: '{{properCase name}}'

@@ -2,7 +2,7 @@
   <div class="docs-demo columns">
     <div class="column col-12">
       <div class="calendar calendar-lg">
-        <div class="calendar-nav navbar">
+        <div class="calendar-nav navbar ">
           <button class="btn btn-action btn-link btn-lg" @click="lastMonth">
             <i class="icon icon-arrow-left"></i>
           </button>
@@ -40,9 +40,9 @@
               >
                 {{ day }}
               </button>
-              <div class="calendar-events">
-                <div class="calendar-event">
-                  {{ dayEvent(day) ? dayEvent(day).event : '' }}
+              <div class="calendar-events" v-if="dayEvent(day)">
+                <div class="calendar-event bg-warning">
+                  {{ dayEvent(day).event }}
                 </div>
               </div>
             </div>

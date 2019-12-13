@@ -12,10 +12,13 @@
 @import "../../../node_modules/spectre.css/src/calendars";
 .bg-theme {
     background: white;
-    &[data-theme="light"] {
-        background: white;
+    [data-theme="theme1"] &{
+        background: pink;
     }
-    &[data-theme="dark"] {
+    [data-theme="theme2"] &{
         background: yellowgreen;
+    }
+    [data-theme="theme3"] &{
+        background: orange;
     }
 }
